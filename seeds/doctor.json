@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Dr. Varga",
+        "specialty": "varga@email.com",
+        "user_id": "2"
+    },
+    {
+        "name": "Dr. Salamanca",
+        "specialty": "salamanca@email.com",
+        "user_id": "1"
+    },
+    {
+        "name": "Dr. Fring",
+        "specialty": "fring@email.com",
+        "user_id": "2"
+    }
+]

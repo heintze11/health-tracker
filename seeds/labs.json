@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Complete Blood Count",
+        "content": "normal",
+        "user_id": 2,
+        "doctor_id": 3
+    },
+    {
+        "name": "Cholesterol",
+        "content": "High",
+        "user_id": 1,
+        "doctor_id": 2
+    },
+    {
+        "name": "Urinalysis",
+        "content": "normal",
+        "user_id": 2,
+        "doctor_id": 1
+    }
+]
