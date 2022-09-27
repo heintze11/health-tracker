@@ -1,63 +1,67 @@
 const User = require('./user');
-const Appointments = require('./appointments');
-const Doctors = require('./doctors');
-const Labs = require('./labs');
-const Prescriptions = require('./prescriptions');
+const Appointment = require('./appointment');
+const Doctor = require('./doctor');
+const Lab = require('./labs');
+const Prescription = require('./prescriptions');
 
-User.hasMany(Appointments, {
+User.hasMany(Appointment, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Appointment.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-Appointments.belongsTo(User, {
+User.hasMany(Doctor, {
     foreignKey: 'user_id',
 });
 
-User.hasMany(Doctors, {
+Doctor.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-Doctors.belongsTo(User, {
+User.hasMany(Lab, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Lab.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-User.hasMany(Labs, {
+User.hasMany(Prescription, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Prescription.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-Labs.belongsTo(User, {
-    foreignKey: 'user_id',
+Doctor.hasMany(Appointment, {
+    foreignKey: 'doctor_id',
+    onDelete: 'CASCADE'
 });
 
-User.hasMany(Prescriptions, {
-    foreignKey: 'user_id',
-});
-
-Prescriptions.belongsTo(User, {
-    foreignKey: 'user_id',
-});
-
-Doctors.hasMany(Appointments, {
+Appointment.belongsTo(Doctor, {
     foreignKey: 'doctor_id',
 });
 
-Appointments.belongsTo(Doctors, {
+Doctor.hasMany(Lab, {
     foreignKey: 'doctor_id',
 });
 
-Doctors.hasMany(Labs, {
+Lab.belongsTo(Doctor, {
     foreignKey: 'doctor_id',
 });
 
-Labs.belongsTo(Doctors, {
+Doctor.hasMany(Prescription, {
     foreignKey: 'doctor_id',
 });
 
-Doctors.hasMany(Prescriptions, {
+Prescription.belongsTo(Doctor, {
     foreignKey: 'doctor_id',
 });
 
-Prescriptions.belongsTo(Doctors, {
-    foreignKey: 'doctor_id',
-});
-
-module.exports = { User, Appointments, Doctors, Labs, Prescriptions };
+module.exports = { User, Appointment, Doctor, Lab, Prescription };
