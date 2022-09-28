@@ -4,7 +4,6 @@ const Doctor = require('./doctor-routes');
 const Lab = require('./lab-routes');
 const Prescription = require('./prescription-routes');
 const login = require('./login');
-const logout = require('./logout');
 
 
 router.use('/appointment', Appointment);
