@@ -12,7 +12,6 @@ router.use('/doctor', Doctor);
 router.use('/lab', Lab);
 router.use('/prescription', Prescription);
 router.use('/login', login);
-router.use('/logout', logout);
 
 
 module.exports = router; 
