@@ -6,7 +6,9 @@ const withAuth = require("../utils/auth");
 //NEED TO ADD withAuth
 router.get("/", (req, res) => {
   Appointment.findAll()
-    .then((data) => res.json(data))
+    .then((data) => res.render("prescriptions", {
+      data
+    }))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
