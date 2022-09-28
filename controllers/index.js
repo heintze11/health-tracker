@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const apiRoutes = require('./api');
+const Appointment = require('./appointment-routes.js');
 
-router.use('/api', apiRoutes);
+router.use('/', Appointment);
 
-router.use('/dashboard', dashboardRoutes);
 
 router.use((req, res) => {
   res.status(404).end();
