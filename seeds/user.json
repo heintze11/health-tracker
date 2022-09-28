@@ -1,17 +1,20 @@
 [
     {
+        "id": "MHBz11_o0S",
         "firstName": "Saul",
         "lastName": "Goodman",
         "email": "saul@email.com",
         "password": "pass1234"
     },
     {
+        "id": "c-dG0JofjP",
         "firstName": "Kim",
         "lastName": "Wexler",
         "email": "kim@email.com",
         "password": "pass1234"
     },
     {
+        "id": "4oMQdZPpq-",
         "firstName": "Chuck",
         "lastName": "McGill",
         "email": "chuck@email.com",
