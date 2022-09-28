@@ -1,4 +1,12 @@
- <form class="form new-project-form">
+ <div>
+    {{#each doctor}}
+    <ul>
+        <li>{{doctor.name}}</li>
+        <li>{{doctor.specialty}}</li>
+    </ul>
+ </div>
+ 
+ {{!-- <form class="form new-project-form">
       <div class="form-group">
         <label for="doctor-name">Doctor Name:</label>
         <input class="form-input" type="text" id="doctor-name" name="doctor-name" />
@@ -14,4 +22,4 @@
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
-    </form>
+    </form> --}}
