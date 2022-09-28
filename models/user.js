@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const { nanoid } = require('nanoid');
 
 class User extends Model {
     checkPassword(loginPw) {
@@ -10,10 +11,11 @@ class User extends Model {
   User.init(
     {
       id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
+        defaultValue: () => nanoid(10),
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true,
+        
       },
       firstName: {
         type: DataTypes.STRING,

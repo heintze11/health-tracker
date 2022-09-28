@@ -1,20 +1,20 @@
 [
     {
-        "date": "2022/04/25",
+        "date": "2022-04-25",
         "time": "10:00",
-        "user_id": 1,
+        "user_id": "MHBz11_o0S",
         "doctor_id": 2
     },
     {
-        "date": "2022/06/12",
+        "date": "2022-06-12",
         "time": "16:00",
-        "user_id": 2,
+        "user_id": "c-dG0JofjP",
         "doctor_id": 3
     },
     {
-        "date": "2022/02/10",
+        "date": "2022-02-10",
         "time": "13:00",
-        "user_id": 3,
+        "user_id": "4oMQdZPpq-",
         "doctor_id": 1
     }
 ]

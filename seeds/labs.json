@@ -2,19 +2,19 @@
     {
         "name": "Complete Blood Count",
         "content": "normal",
-        "user_id": 2,
+        "user_id": "c-dG0JofjP",
         "doctor_id": 3
     },
     {
         "name": "Cholesterol",
         "content": "High",
-        "user_id": 1,
+        "user_id": "MHBz11_o0S",
         "doctor_id": 2
     },
     {
         "name": "Urinalysis",
         "content": "normal",
-        "user_id": 2,
+        "user_id": "c-dG0JofjP",
         "doctor_id": 1
     }
 ]

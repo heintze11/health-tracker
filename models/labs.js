@@ -20,7 +20,7 @@ Lab.init(
             allowNull: false,
         },
         user_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             references: {
                 model: 'user',
                 key: 'id',

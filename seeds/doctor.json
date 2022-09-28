@@ -1,17 +1,17 @@
 [
     {
         "name": "Dr. Varga",
-        "specialty": "varga@email.com",
-        "user_id": "2"
+        "specialty": "Psychiatrist",
+        "user_id": "c-dG0JofjP"
     },
     {
         "name": "Dr. Salamanca",
-        "specialty": "salamanca@email.com",
-        "user_id": "1"
+        "specialty": "PCP",
+        "user_id": "MHBz11_o0S"
     },
     {
         "name": "Dr. Fring",
-        "specialty": "fring@email.com",
-        "user_id": "2"
+        "specialty": "PCP",
+        "user_id": "4oMQdZPpq-"
     }
 ]

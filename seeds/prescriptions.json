@@ -3,21 +3,21 @@
         "name": "Lipitor",
         "dose": "20 mg",
         "frequency": "Daily",
-        "user_id": 1,
+        "user_id": "MHBz11_o0S",
         "doctor_id": 2
     },
     {
         "name": "Omeprazole",
         "dose": "20 mg",
         "frequency": "Twice Daily",
-        "user_id": 2,
+        "user_id": "c-dG0JofjP",
         "doctor_id": 3
     },
     {
         "name": "Silenor",
         "dose": "75 mg",
         "frequency": "Daily",
-        "user_id": 3,
+        "user_id":"4oMQdZPpq-",
         "doctor_id": 1
     }
 ]
