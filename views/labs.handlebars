@@ -1,7 +1,13 @@
  <div>
+    <h2><strong>Lab Results</strong></h2>
     {{#each lab}}
-    <ul>
-        <li>{{lab.name}}</li>
-        <li>{{lab.content}}</li>
-    </ul>
+ <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{lab.name}}</li>
+    <li class="list-group-item">{{lab.content}}</li>
+ </ul>
+    {{/each}}
+      <div>
+        <button type="button" class="btn btn-outline-success btn-lg">Create</button>
+        <button type="button" class="btn btn-outline-danger btn-lg">Delete</button>
+    </div>
  </div>

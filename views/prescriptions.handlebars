@@ -1,8 +1,15 @@
  <div>
+    <h2 class="font-weight-bold">Prescriptions</h2>
+    {{log prescription}}
     {{#each prescription}}
-    <ul>
-        <li>{{prescription.name}}</li>
-        <li>{{prescription.dose}}</li>
-        <li>{{prescription.frequency}}</li>
-    </ul>
+ <ul class="list-group list-group-flush">
+  <li class="list-group-item">{{prescription.name}}</li>
+  <li class="list-group-item">{{prescription.dose}}</li>
+  <li class="list-group-item">{{prescription.frequency}}</li>
+ </ul>
+    {{/each}}
+    <div>
+        <button type="button" class="btn btn-outline-success btn-lg">Create</button>
+        <button type="button" class="btn btn-outline-danger btn-lg">Delete</button>
+    </div>
  </div>
