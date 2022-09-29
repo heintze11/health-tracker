@@ -1,10 +1,16 @@
  <div>
+  <h2><strong>Doctors</strong></h2>
     {{#each doctor}}
-    <ul>
-        <li>{{doctor.name}}</li>
-        <li>{{doctor.specialty}}</li>
-    </ul>
+   <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{doctor.name}}</li>
+    <li class="list-group-item">{{doctor.specialty}}</li>
+   </ul>
     {{/each}}
+      <div>
+        <button type="button" class="btn btn-outline-success btn-lg">Create</button>
+        <button type="button" class="btn btn-outline-danger btn-lg">Delete</button>
+    </div>
+
  </div>
  
  {{!-- <form class="form new-project-form">
