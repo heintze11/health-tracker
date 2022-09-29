@@ -6,15 +6,13 @@ const withAuth = require("../../utils/auth");
 //NEED TO ADD withAuth
 router.get("/", (req, res) => {
   Appointment.findAll()
-    .then((data) => res.render("prescriptions", {
-      data
-    }))
+  .then((data) => res.json(data))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
-
+  });
+  
 router.post("/", (req, res) => {
   console.log(req.body);
   Appointment.create(req.body)
