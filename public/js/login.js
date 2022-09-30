@@ -15,7 +15,6 @@ const loginFormHandler = async (event) => {
         if (response.ok) {
             // If successful, go to profile page
             document.location.replace('/dashboard');
-            // res.redirect('/dashboard');
         } else {
             alert('Unsuccessful login. Please try again');
         }
@@ -33,14 +32,14 @@ const signupFormHandler = async (event) => {
     if (fname && lname && email && password) {
         const response = await fetch('/api/login', {
           method: 'POST',
-          body: JSON.stringify({ name, email, password }),
+          body: JSON.stringify({ fname, lname, email, password }),
           headers: { 'Content-Type': 'application/json' },
         });
     
         if (response.ok) {
           document.location.replace('/dashboard');
         } else {
-          alert('Unsuccessful login. Please try again');
+          alert('Unsuccessful signup. Please try again');
         }
       }
     };
