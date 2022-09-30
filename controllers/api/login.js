@@ -4,22 +4,22 @@ const { User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 //login create
-router.post("/", withAuth, (req, res) => {
-  console.log(req.body);
-  User.create(req.body)
-    .then((data) => {
-      res.json(data);
-      req.session.save(() => {
-        req.session.user_id = data.id;
-        req.session.logged_in = true;
-        res.json({ user: userData, message: "You are now logged in!" });
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
-    });
-});
+// router.post("/", withAuth, (req, res) => {
+//   console.log(req.body);
+//   User.create(req.body)
+//     .then((data) => {
+//       res.json(data);
+//       req.session.save(() => {
+//         req.session.user_id = data.id;
+//         req.session.logged_in = true;
+//         res.json({ user: userData, message: "You are now logged in!" });
+//       });
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(400).json(err);
+//     });
+// });
 
 //Login check
 router.post('/', async (req, res) => {
