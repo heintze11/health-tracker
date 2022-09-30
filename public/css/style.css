@@ -1,0 +1,15 @@
+.dashboard {
+    position: relative;
+    top: 150px;
+}
+.blue {
+    color: rgba(1, 1, 97, 0.822);
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    color: rgba(1, 1, 97, 0.822);
+  }

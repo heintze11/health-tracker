@@ -1,4 +1,7 @@
-const delButtonHandler = async (event) => {
+createDoctor = document.querySelector('.create-doctor');
+deleteDoctor = document.querySelector('.delete-doctor');
+
+const deleteDoctor = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
