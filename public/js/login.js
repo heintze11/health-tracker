@@ -6,7 +6,7 @@ const loginFormHandler = async (event) => {
 
     // Changed users to user so if there is an issue check there first
     if (email && password) {
-        const response = await fetch('/api/user/login', {
+        const response = await fetch('/api/login', {
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
@@ -14,7 +14,8 @@ const loginFormHandler = async (event) => {
 
         if (response.ok) {
             // If successful, go to profile page
-            document.location.replace('/profile');
+            document.location.replace('/dashboard');
+            // res.redirect('/dashboard');
         } else {
             alert('Unsuccessful login. Please try again');
         }
@@ -30,14 +31,14 @@ const signupFormHandler = async (event) => {
     const password = document.querySelector('#password-signup').value.trim();
 
     if (fname && lname && email && password) {
-        const response = await fetch('/api/user', {
+        const response = await fetch('/api/login', {
           method: 'POST',
           body: JSON.stringify({ name, email, password }),
           headers: { 'Content-Type': 'application/json' },
         });
     
         if (response.ok) {
-          document.location.replace('/profile');
+          document.location.replace('/dashboard');
         } else {
           alert('Unsuccessful login. Please try again');
         }
