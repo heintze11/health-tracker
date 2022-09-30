@@ -24,7 +24,7 @@ router.get('/api/login', (req, res) => {
 // dashboard page
 router.get('/dashboard', async (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/dashboard');
+        res.render('dashboard');
         return;
       }
     
@@ -32,11 +32,13 @@ router.get('/dashboard', async (req, res) => {
     });
 
 // labs
-router.get('/', withAuth, async (req, res) => {
+router.get('/lab', withAuth, async (req, res) => {
+    console.log(req.session);
+    console.log("Are we here?");
     try {
       const labData = await Lab.findAll({
         where: {
-          userId: req.session.userId,
+          user_id: req.session.user_id,
         },
       });
   
@@ -47,14 +49,35 @@ router.get('/', withAuth, async (req, res) => {
         labs,
       });
     } catch (err) {
-      res.redirect('login');
+      res.redirect('/dashboard');
     }
   });
 
 // appointments
-
+// router.get('/appointment', withAuth, async (req, res) => {
+//     try {
+//       const appointmentData = await appointmentData.findAll({
+//         where: {
+//           user_id: req.session.user_id,
+//         },
+//       });
+  
+//       const labs = labData.map((lab) => lab.get({ plain: true }));
+  
+//       res.render('labs', {
+//         layout: 'main',
+//         labs,
+//       });
+//     } catch (err) {
+//       res.redirect('/dashboard');
+//     }
+//   });
 
 //doctors
+
+
+//prescriptions
+
 
 
 
