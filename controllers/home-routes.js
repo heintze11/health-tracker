@@ -22,7 +22,7 @@ router.get('/api/login', (req, res) => {
   });
 
 // dashboard page
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
     if (req.session.logged_in) {
         res.render('dashboard');
         return;
@@ -33,8 +33,6 @@ router.get('/dashboard', async (req, res) => {
 
 // labs
 router.get('/lab', withAuth, async (req, res) => {
-    console.log(req.session);
-    console.log("Are we here?");
     try {
       const labData = await Lab.findAll({
         where: {
@@ -42,11 +40,12 @@ router.get('/lab', withAuth, async (req, res) => {
         },
       });
   
-      const labs = labData.map((lab) => lab.get({ plain: true }));
+      const lab = labData.map((lab) => lab.get({ plain: true }));
+      console.log(lab);
   
       res.render('labs', {
         layout: 'main',
-        labs,
+        lab,
       });
     } catch (err) {
       res.redirect('/dashboard');
@@ -54,30 +53,64 @@ router.get('/lab', withAuth, async (req, res) => {
   });
 
 // appointments
-// router.get('/appointment', withAuth, async (req, res) => {
-//     try {
-//       const appointmentData = await appointmentData.findAll({
-//         where: {
-//           user_id: req.session.user_id,
-//         },
-//       });
+router.get('/appointment', withAuth, async (req, res) => {
+    try {
+      const appointmentData = await Appointment.findAll({
+        where: {
+          user_id: req.session.user_id,
+        },
+      });
   
-//       const labs = labData.map((lab) => lab.get({ plain: true }));
+      const appointment = appointmentData.map((appoint) => appoint.get({ plain: true }));
   
-//       res.render('labs', {
-//         layout: 'main',
-//         labs,
-//       });
-//     } catch (err) {
-//       res.redirect('/dashboard');
-//     }
-//   });
+      res.render('appointment', {
+        layout: 'main',
+        appointment,
+      });
+    } catch (err) {
+      res.redirect('/dashboard');
+    }
+  });
 
 //doctors
-
+router.get('/doctor', withAuth, async (req, res) => {
+    try {
+      const doctorData = await Doctor.findAll({
+        where: {
+          user_id: req.session.user_id,
+        },
+      });
+  
+      const doctor = doctorData.map((doc) => doc.get({ plain: true }));
+  
+      res.render('doctor', {
+        layout: 'main',
+        doctor,
+      });
+    } catch (err) {
+      res.redirect('/dashboard');
+    }
+  });
 
 //prescriptions
-
+router.get('/prescription', withAuth, async (req, res) => {
+    try {
+      const prescriptionData = await Prescription.findAll({
+        where: {
+          user_id: req.session.user_id,
+        },
+      });
+  
+      const prescription = prescriptionData.map((pres) => pres.get({ plain: true }));
+  
+      res.render('prescriptions', {
+        layout: 'main',
+        prescription,
+      });
+    } catch (err) {
+      res.redirect('/dashboard');
+    }
+  });
 
 
 
