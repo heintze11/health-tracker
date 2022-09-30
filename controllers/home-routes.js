@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Doctor, Appointment, Lab, Prescription } = require('../models/');
+const withAuth = require("../utils/auth");
 
 //welcome homepage
 router.get('/', async (req, res) => {
@@ -31,7 +32,24 @@ router.get('/dashboard', async (req, res) => {
     });
 
 // labs
-
+router.get('/', withAuth, async (req, res) => {
+    try {
+      const labData = await Lab.findAll({
+        where: {
+          userId: req.session.userId,
+        },
+      });
+  
+      const labs = labData.map((lab) => lab.get({ plain: true }));
+  
+      res.render('labs', {
+        layout: 'main',
+        labs,
+      });
+    } catch (err) {
+      res.redirect('login');
+    }
+  });
 
 // appointments
 

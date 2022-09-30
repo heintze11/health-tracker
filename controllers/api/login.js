@@ -22,7 +22,8 @@ router.post("/", withAuth, (req, res) => {
 });
 
 //Login check
-router.post('/login', async (req, res) => {
+router.post('/', async (req, res) => {
+  console.log("HEllo")
 try {
     const userData = await User.findOne({ where: { email: req.body.email } });
     if (!userData) {
