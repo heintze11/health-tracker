@@ -3,12 +3,13 @@
     {{log appointment}}
     {{#each appointment}}
  <ul class="list-group list-group-flush">
-  <li class="list-group-item">{{appointment.date}}</li>
-  <li class="list-group-item">{{appointment.time}}</li>
+  <li class="list-group-item">{{date}}</li>
+  <li class="list-group-item">{{time}}</li>
  </ul>
     {{/each}}
       <div>
-        <button type="button" class="btn btn-outline-success btn-lg">Create</button>
-        <button type="button" class="btn btn-outline-danger btn-lg">Delete</button>
+        <button type="button" class="btn btn-outline-success btn-lg appointment-create">Create</button>
+        <button type="button" class="btn btn-outline-danger btn-lg appointment-delete">Delete</button>
     </div>
  </div>
+ <script src="/js/appointment.js"></script>

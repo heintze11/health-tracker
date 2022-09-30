@@ -2,16 +2,17 @@
   <h2><strong>Doctors</strong></h2>
     {{#each doctor}}
    <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{doctor.name}}</li>
-    <li class="list-group-item">{{doctor.specialty}}</li>
+    <li class="list-group-item">{{name}}</li>
+    <li class="list-group-item">{{specialty}}</li>
    </ul>
     {{/each}}
       <div>
-        <button type="button" class="btn btn-outline-success btn-lg">Create</button>
-        <button type="button" class="btn btn-outline-danger btn-lg">Delete</button>
+        <button type="button" class="btn btn-outline-success btn-lg doctor-create">Create</button>
+        <button type="button" class="btn btn-outline-danger btn-lg doctor-delete">Delete</button>
     </div>
 
  </div>
+ <script src="/js/doctor.js"></script>
  
  {{!-- <form class="form new-project-form">
       <div class="form-group">
