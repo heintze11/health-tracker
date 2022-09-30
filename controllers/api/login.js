@@ -42,6 +42,8 @@ try {
     }
 
     req.session.save(() => {
+      req.session.firstName = userData.firstName;
+      req.session.lastName = userData.lastName;
       req.session.user_id = userData.id;
       req.session.logged_in = true;
       res.json({ user: userData, message: 'You are now logged in!' });

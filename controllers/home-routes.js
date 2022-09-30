@@ -23,8 +23,9 @@ router.get('/api/login', (req, res) => {
 
 // dashboard page
 router.get('/dashboard', withAuth, async (req, res) => {
+    console.log(req.session);
     if (req.session.logged_in) {
-        res.render('dashboard');
+        res.render('dashboard', req.session);
         return;
       }
     
