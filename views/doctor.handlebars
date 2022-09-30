@@ -1,4 +1,19 @@
- <form class="form new-project-form">
+ <div>
+  <h2><strong>Doctors</strong></h2>
+    {{#each doctor}}
+   <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{doctor.name}}</li>
+    <li class="list-group-item">{{doctor.specialty}}</li>
+   </ul>
+    {{/each}}
+      <div>
+        <button type="button" class="btn btn-outline-success btn-lg">Create</button>
+        <button type="button" class="btn btn-outline-danger btn-lg">Delete</button>
+    </div>
+
+ </div>
+ 
+ {{!-- <form class="form new-project-form">
       <div class="form-group">
         <label for="doctor-name">Doctor Name:</label>
         <input class="form-input" type="text" id="doctor-name" name="doctor-name" />
@@ -14,4 +29,4 @@
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
-    </form>
+    </form> --}}

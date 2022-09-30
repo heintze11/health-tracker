@@ -1,25 +1,21 @@
 const router = require("express").Router();
 const { response } = require("express");
-const { Appointment, Doctor } = require("../models");
-const withAuth = require("../utils/auth");
+const { Appointment } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 //NEED TO ADD withAuth
 router.get("/", (req, res) => {
   Appointment.findAll()
-    .then((data) => res.json(data))
+  .then((data) => res.json(data))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
-
+  });
+  
 router.post("/", (req, res) => {
-  Appointment.create({
-    date: req.body.date,
-    time: req.body.time,
-    user_id: req.session.user_id,
-    doctor_id: req.session.doctor_id,
-  })
+  console.log(req.body);
+  Appointment.create(req.body)
     .then((data) => res.json(data))
     .catch((err) => {
       console.log(err);
@@ -28,17 +24,11 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  Appointment.update(
-    {
-      date: req.body.date,
-      time: req.body.time,
+  Appointment.update(req.body, {
+    where: {
+      id: req.params.id,
     },
-    {
-      where: {
-        id: req.params.id,
-      },
-    }
-  )
+  })
     .then((data) => {
       if (!data) {
         res.status(404).json({ message: "Not found" });
@@ -60,7 +50,7 @@ router.delete("/:id", (req, res) => {
   })
     .then((data) => {
       if (!data) {
-        res.status(404).json({ message: "No appointment found with this id" });
+        res.status(404).json({ message: "No appointment found" });
         return;
       }
       res.json(data);
