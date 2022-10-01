@@ -1,3 +1,28 @@
+
+<div>
+  <h2><strong>Lab Results</strong></h2>
+  {{#each lab}}
+<div class="lab-card">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{name}}</li>
+      <li class="list-group-item">{{content}}</li>
+    </ul>
+</div>
+  {{/each}}
+  <form class="lab-form">
+    <input type="text" name="lab-name" placeholder="Lab name" />
+    <input type="text" name="lab-text" placeholder="Lab result" />
+
+    <button
+      type="submit"
+      class="lab-create btn btn-outline-success btn-lg"
+    >Create</button>
+  </form>
+
+</div>
+
+<script src="/js/lab.js"></script>
+=======
  <div>
     <h2><strong>Lab Results</strong></h2>
     {{#each lab}}
@@ -11,3 +36,4 @@
         <button type="button" class="lab-delete btn btn-outline-danger btn-lg">Delete</button>
     </div>
  </div>
+
