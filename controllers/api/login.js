@@ -4,9 +4,10 @@ const { User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 //login create
-router.post("/signup", (req, res) => {
+router.post("/signup", async (req, res) => {
   console.log("HEllo")
   console.log(req.body);
+  try {
   const newUser = await User.create({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -20,11 +21,11 @@ router.post("/signup", (req, res) => {
       req.session.loggedIn = true;
 
       res.json(newUser);
-    })
-    .catch((err) => {
+    });
+  } catch(err) {
       console.log(err);
       res.status(400).json(err);
-    });
+    }
 });
 
 //Login check
