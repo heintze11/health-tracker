@@ -1,33 +1,28 @@
- <div>
-  <h2><strong>Doctors</strong></h2>
-    {{#each doctor}}
-   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Doctor Name: {{name}}</li>
-    <li class="list-group-item">Doctor Specialty: {{specialty}}</li>
-   </ul>
-    {{/each}}
-      <div>
-        <button type="button" class="btn btn-outline-success btn-lg doctor-create">Create</button>
-        <button type="button" class="btn btn-outline-danger btn-lg doctor-delete">Delete</button>
-    </div>
+<div>
+   <h2>Doctors</h2>
+ <div class="card bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header">Doctor</div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text">
+      <ul class="list-group list-group-flush">
+         {{#each doctor}}
+         <li class="list-group-item">Doctor Name: {{name}}</li>
+         <li class="list-group-item">Doctor Specialty: {{specialty}}</li>
+      </ul>
+         {{/each}}
+   </p>
+  </div>
+</div>
+<form class="form">
+    <input type="text" name="name" placeholder="Doctor Name" />
+    <input type="text" name="specialty" placeholder="Doctor Specialty" />
 
- </div>
- <script src="/js/doctor.js"></script>
- 
- {{!-- <form class="form new-project-form">
-      <div class="form-group">
-        <label for="doctor-name">Doctor Name:</label>
-        <input class="form-input" type="text" id="doctor-name" name="doctor-name" />
-      </div>
-      <div class="form-group">
-        <label for="prescriptions">Prescriptions:</label>
-        <input class="form-input" type="text" id="prescriptions" name="prescriptions" />
-      </div>
-      <div class="form-group">
-        <label for="lab">Lab Results:</label>
-        <textarea class="form-input" id="lab" name="lab"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form> --}}
+    <button
+      type="submit"
+      class="create btn btn-outline-success btn-sm"
+    >Create</button>
+  </form>
+</div>
+
+<script src="/js/doctor.js"></script>

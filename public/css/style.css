@@ -22,3 +22,7 @@
     color: rgba(1, 1, 97, 0.822);
   }
 
+.btn {
+    cursor: pointer;
+}  
+

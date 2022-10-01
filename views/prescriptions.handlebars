@@ -1,4 +1,4 @@
- <div>
+ {{!-- <div>
     <h2 class="font-weight-bold">Prescriptions</h2>
     {{log prescription}}
     {{#each prescription}}
@@ -12,4 +12,33 @@
         <button type="button" class="btn btn-outline-success btn-lg">Create</button>
         <button type="button" class="btn btn-outline-danger btn-lg">Delete</button>
     </div>
- </div>
+ </div> --}}
+
+<div>
+   <h2>Prescriptions</h2>
+ <div class="card bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header">Prescription</div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text">
+      <ul class="list-group list-group-flush">
+         {{#each prescription}}
+         <li class="list-group-item">Prescription Name: {{name}}</li>
+         <li class="list-group-item">Recommended Dose: {{dose}}</li>
+         <li class="list-group-item">Dosage Frequency: {{frequency}}</li>
+      </ul>
+         {{/each}}
+   </p>
+  </div>
+</div>
+<form class="form">
+    <input type="text" name="name" placeholder="Prescription Name" />
+    <input type="text" name="dose" placeholder="Recommended Dose" />
+    <input type="text" name="frequency" placeholder="Dosage Frequency" />
+
+    <button
+      type="submit"
+      class="create btn btn-outline-success btn-sm"
+    >Create</button>
+  </form>
+</div>
