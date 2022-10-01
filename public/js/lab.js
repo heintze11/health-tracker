@@ -2,10 +2,10 @@ const labForm = document.querySelector(".lab-form");
 
 const createButtonHandler = async (event) => {
   event.preventDefault();
-  const name = document.querySelector('input[name="lab-name"]').value;
-  const content = document.querySelector('input[name="lab-text"]').value;
+  const name = document.querySelector('input[name="name"]').value;
+  const content = document.querySelector('input[name="content"]').value;
 
-  const response = await fetch("api/lab", {
+  const response = await fetch("/api/lab", {
     method: "POST",
     body: JSON.stringify({
       name,
