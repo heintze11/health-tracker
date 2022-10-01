@@ -1,35 +1,19 @@
- {{!-- <div>
-    <h2 class="font-weight-bold">Prescriptions</h2>
-    {{log prescription}}
-    {{#each prescription}}
- <ul class="list-group list-group-flush">
-  <li class="list-group-item">Prescription Name: {{name}}</li>
-  <li class="list-group-item">Recommended Dose: {{dose}}</li>
-  <li class="list-group-item">Dosage Frequency: {{frequency}}</li>
- </ul>
-    {{/each}}
-    <div>
-        <button type="button" class="btn btn-outline-success btn-lg">Create</button>
-        <button type="button" class="btn btn-outline-danger btn-lg">Delete</button>
-    </div>
- </div> --}}
-
 <div>
    <h2>Prescriptions</h2>
  <div class="card bg-light mb-3" style="max-width: 18rem;">
-  <div class="card-header">Prescription</div>
+         {{#each prescription}}
+  <div class="card-header">Prescription <button class="btn-trash">🗑</button></div>
   <div class="card-body">
     <h5 class="card-title"></h5>
     <p class="card-text">
       <ul class="list-group list-group-flush">
-         {{#each prescription}}
          <li class="list-group-item">Prescription Name: {{name}}</li>
          <li class="list-group-item">Recommended Dose: {{dose}}</li>
          <li class="list-group-item">Dosage Frequency: {{frequency}}</li>
       </ul>
-         {{/each}}
    </p>
   </div>
+         {{/each}}
 </div>
 <form class="form">
     <input type="text" name="name" placeholder="Prescription Name" />
@@ -42,3 +26,5 @@
     >Create</button>
   </form>
 </div>
+
+<script src="/js/prescription.js"></script>
