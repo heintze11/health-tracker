@@ -5,13 +5,15 @@ const createButtonHandler = async (event) => {
   const name = document.querySelector('input[name="name"]').value;
   const dose = document.querySelector('input[name="dose"]').value;
   const frequency = document.querySelector('input[name="frequency"]').value;
+  
 
   const response = await fetch("api/prescription", {
     method: "POST",
     body: JSON.stringify({
       name,
       dose,
-      frequency
+      frequency,
+      doctor_id
     }),
     headers: {
       "Content-Type": "application/json",

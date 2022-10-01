@@ -98,12 +98,17 @@ router.get('/prescription', withAuth, async (req, res) => {
         where: {
           user_id: req.session.user_id,
         },
+        include: [
+          Doctor
+        ]
       });
-  
+      const doctorData = await Doctor.findAll();
+      const doctor = doctorData.map((doc) => doc.get({ plain: true }));
       const prescription = prescriptionData.map((pres) => pres.get({ plain: true }));
   
       res.render('prescriptions', {
         prescription,
+        doctor,
         logged_in: req.session.logged_in
       });
     } catch (err) {
