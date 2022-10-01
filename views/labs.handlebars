@@ -1,28 +1,29 @@
- <div>
-   <h2>Lab Results</h2>
- <div class="lab-card card bg-light mb-3" style="max-width: 18rem;">
-         {{#each lab}}
-  <div class="card-header">Lab Results <button type="click" id={{id}} class="btn-trash">🗑</button></div>
-  <div class="card-body">
-    <h5 class="card-title"></h5>
-    <p class="card-text">
+<div>
+  <h2>Lab Results</h2>
+  <div class="lab-card card bg-light mb-3" style="max-width: 18rem;">
+    {{#each lab}}
+    <div class="card-header">Lab Name: {{name}} <button type="click" id={{id}} class="btn-trash">🗑</button></div>
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <p class="card-text">
       <ul class="list-group list-group-flush">
-         <li class="list-group-item">Lab Name: {{name}}</li>
-         <li class="list-group-item">Lab Content: {{content}}</li>
+        <li class="list-group-item">Lab Content: {{content}}</li>
+        <li class="list-group-item">Run by: {{doctor.name}}</li>
       </ul>
-   </p>
+      </p>
+    </div>
+    {{/each}}
   </div>
-         {{/each}}
-</div>
-<form class="lab-form">
+  <form class="lab-form">
     <input type="text" name="name" placeholder="Lab Name" />
     <input type="text" name="content" placeholder="Lab Content" />
-    <button
-      type="submit"
-      class="create btn btn-outline-success btn-sm"
-    >Create</button>
+    <select class="form-control" name="doctor" placeholder="Doctor">
+      {{#each doctor}}
+      <option value={{id}}>{{name}}</option>
+      {{/each}}
+    </select>
+    <button type="submit" class="create btn btn-outline-success btn-sm">Create</button>
   </form>
 </div>
 
 <script src="/js/lab.js"></script>
-

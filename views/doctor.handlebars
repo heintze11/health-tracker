@@ -2,12 +2,11 @@
    <h2>Doctors</h2>
  <div class="doctor-card card bg-light mb-3" style="max-width: 18rem;">
          {{#each doctor}}
-  <div class="card-header">Doctor <button id={{id}} class="btn-trash">🗑</button></div>
+  <div class="card-header">{{name}} <button id={{id}} class="btn-trash">🗑</button></div>
   <div class="card-body">
     <h5 class="card-title"></h5>
     <p class="card-text">
       <ul class="list-group list-group-flush">
-         <li class="list-group-item">Doctor Name: {{name}}</li>
          <li class="list-group-item">Doctor Specialty: {{specialty}}</li>
       </ul>
    </p>

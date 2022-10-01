@@ -19,7 +19,7 @@ router.post("/", (req, res) => {
     date: req.body.date,
     time: req.body.time,
     user_id: req.session.user_id,
-    doctor_id: req.session.doctor_id,
+    doctor_id: req.body.doctor_id,
   })
     .then((data) => res.json(data))
     .catch((err) => {
