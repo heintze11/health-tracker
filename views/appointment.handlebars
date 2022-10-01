@@ -15,8 +15,11 @@
   </div>
 </div>
 <form class="appointment-form">
-    <input type="text" name="date" placeholder="Appointment Date" />
-    <input type="text" name="time" placeholder="Appointment Time" />
+    <input type="date" class="date" name="date"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31">
+    <input type="time" id="appt" name="time"
+       min="09:00" max="18:00" required>
 
     <button
       type="submit"
