@@ -1,49 +1,41 @@
-let createLab;
-let deleteLab;
-
-if (window.location.pathname === '/api/lab') {
-    createLab = document.querySelector('.create-lab');
-    deleteLab = document.querySelector('.delete-lab');
-  }
-
-
+const labForm = document.querySelector('.lab-form');
 
 // const delButtonHandler = async (event) => {
-//   if (event.target.hasAttribute("data-id")) {
-//     const id = event.target.getAttribute("data-id");
+//   event.preventDefault();
+//   const response = await fetch(`/api/lab`, {
+//     method: "DELETE",
+//   });
 
-//     const response = await fetch(`/api/lab/${id}`, {
-//       method: "DELETE",
-//     });
-
-//     if (response.ok) {
-//       document.location.replace("/dashboard");
-//     } else {
-//       alert("Failed to delete. Please try again");
-//     }
+//   if (response.ok) {
+//     document.location.replace("/dashboard");
+//   } else {
+//     alert("Failed to delete. Please try again");
 //   }
 // };
 
-// const createButtonHandler = async (event) => {
-//   if (event.target.hasAttribute("data-id")) {
-//     const id = event.target.getAttribute("data-id");
+const createButtonHandler = async (event) => {
+    console.log('hello');
+  event.preventDefault();
+  const name = document.querySelector('input[name="lab-name"]').value;
+  const content = document.querySelector('input[name="lab-text"]').value;
 
-//     const response = await fetch(`/api/lab/${id}`, {
-//       method: "POST",
-//     });
+  const response = await fetch('api/lab', {
+      method: 'POST',
+      body: JSON.stringify({
+          name,
+          content
+      }),
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  });
+  if(response.ok) {
+      document.location.reload('/api/lab');
+  } else {
+    alert(response.statusText);
+  }
+};
 
-//     if (response.ok) {
-//       document.location.replace("/dashboard");
-//     } else {
-//       alert("Failed to create. Please try again");
-//     }
-//   }
-// };
 
-// document
-//   .querySelector(".lab-delete")
-//   .addEventListener("submit", delButtonHandler);
 
-// document
-//   .querySelector(".lab-create")
-//   .addEventListener("submit", createButtonHandler);
+document.querySelector(".lab-form").addEventListener("submit", createButtonHandler);
