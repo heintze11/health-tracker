@@ -6,12 +6,14 @@ const createButtonHandler = async (event) => {
   event.preventDefault();
   const name = document.querySelector('input[name="name"]').value;
   const content = document.querySelector('input[name="content"]').value;
+  const doctor_id = document.querySelector('select[name="doctor"]').value;
 
   const response = await fetch("/api/lab", {
     method: "POST",
     body: JSON.stringify({
       name,
       content,
+      doctor_id,
     }),
     headers: {
       "Content-Type": "application/json",

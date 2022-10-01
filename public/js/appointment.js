@@ -4,6 +4,7 @@ const createButtonHandler = async (event) => {
   event.preventDefault();
   const date = document.querySelector('input[name="date"]').value;
   const time = document.querySelector('input[name="time"]').value;
+  const doctor_id = document.querySelector('select[name="doctor"]').value;
   
   console.log(date);
   console.log(time);
@@ -12,6 +13,7 @@ const createButtonHandler = async (event) => {
     body: JSON.stringify({
       date,
       time,
+      doctor_id
     }),
     headers: {
       "Content-Type": "application/json",

@@ -38,12 +38,17 @@ router.get('/lab', withAuth, async (req, res) => {
         where: {
           user_id: req.session.user_id,
         },
+        include: [
+          Doctor
+        ]
       });
-  
+      const doctorData = await Doctor.findAll();
+      const doctor = doctorData.map((doc) => doc.get({ plain: true }));
       const lab = labData.map((lab) => lab.get({ plain: true }));
   
       res.render('labs', {
         lab,
+        doctor,
         logged_in: req.session.logged_in
       });
     } catch (err) {
@@ -58,12 +63,17 @@ router.get('/appointment', withAuth, async (req, res) => {
         where: {
           user_id: req.session.user_id,
         },
+        include: [
+          Doctor
+        ]
       });
-  
+      const doctorData = await Doctor.findAll();
+      const doctor = doctorData.map((doc) => doc.get({ plain: true }));
       const appointment = appointmentData.map((appoint) => appoint.get({ plain: true }));
   
       res.render('appointment', {
         appointment,
+        doctor,
         logged_in: req.session.logged_in
       });
     } catch (err) {

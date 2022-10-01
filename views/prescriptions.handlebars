@@ -21,11 +21,9 @@
     <input type="text" name="frequency" placeholder="Dosage Frequency" />
     <select class="form-control" name="doctor" placeholder="Doctor">
       {{#each doctor}}
-        <option value={{id}}>{{name}}</option>
-        {{/each}}
+      <option value={{id}}>{{name}}</option>
+      {{/each}}
     </select>
-
-
     <button type="submit" class="create btn btn-outline-success btn-sm">Create</button>
   </form>
 </div>
