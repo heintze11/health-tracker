@@ -19,7 +19,7 @@ router.post("/", (req, res) => {
     dose: req.body.dose,
     frequency: req.body.frequency,
     user_id: req.session.user_id,
-    doctor_id: req.session.doctor_id,
+    doctor_id: req.body.doctor_id,
   })
     .then((data) => res.json(data))
     .catch((err) => {
