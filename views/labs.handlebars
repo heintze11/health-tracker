@@ -1,19 +1,12 @@
 <div>
-   <h2>Lab Results</h2>
- <div class="card bg-light mb-3" style="max-width: 18rem;">
-    {{#each lab}}
-  <div class="card-header btn-sm btn-outline-secondary">Lab Results <button class="btn-trash">🗑</button></div>
-  <div class="card-body">
-    <h5 class="card-title"></h5>
-    <p class="card-text">
-      <ul class="list-group list-group-flush">
-         
-         <li class="list-group-item">Lab Name: {{name}}</li>
-         <li class="list-group-item">Lab Content: {{content}}</li>
-      </ul>
-   </p>
-  </div>
-         {{/each}}
+  <h2><strong>Lab Results</strong></h2>
+  {{#each lab}}
+<div class="lab-card">
+    <ul class="list-group list-group-flush">
+      <button type="click" class="delete-button text-danger">Delete</button>
+      <li class="list-group-item">{{name}}</li>
+      <li class="list-group-item">{{content}}</li>
+    </ul>
 </div>
 <form class="form">
     <input type="text" name="name" placeholder="Lab Name" />
@@ -27,4 +20,19 @@
 </div>
 
 <script src="/js/lab.js"></script>
+<script src="/js/lab_delete.js"></script>
+=======
+ <div>
+    <h2><strong>Lab Results</strong></h2>
+    {{#each lab}}
+ <ul class="list-group list-group-flush">
+    <li class="list-group-item">Lab Name: {{name}}</li>
+    <li class="list-group-item">Lab Content: {{content}}</li>
+ </ul>
+    {{/each}}
+      <div>
+        <button type="button" class="lab-create btn btn-outline-success btn-lg">Create</button>
+        <button type="button" class="lab-delete btn btn-outline-danger btn-lg">Delete</button>
+    </div>
+ </div>
 

@@ -1,16 +1,13 @@
-const labForm = document.querySelector('.edit-lab');
-
+// const labForm = document.querySelector('.edit-lab');
 
 const delButtonHandler = async (event) => {
   event.preventDefault();
 
-  const id = window.location.toString().split('/')[
-      window.location.toString().split('/').length - 1
-  ];
-  const response = await fetch(`/api/lab/${id}`, {
+  const labID = parseInt(req.params.id);
+  const response = await fetch(`/api/lab/${labID}`, {
     method: "DELETE",
     body: JSON.stringify({
-        id: id
+        id: labID
     }),
     headers: {
         'Content-Type': 'application/json'
@@ -24,4 +21,5 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document.querySelector(".edit-lab").addEventListener("button", delButtonHandler);
+document.querySelector(".delete-button").addEventListener("click", delButtonHandler);
+
