@@ -2,12 +2,11 @@
   <h2>Prescriptions</h2>
   <div class="card bg-light mb-3" style="max-width: 18rem;">
     {{#each prescription}}
-    <div class="card-header">Prescription <button class="btn-trash">🗑</button></div>
+    <div class="card-header">{{name}} <button class="btn-trash">🗑</button></div>
     <div class="card-body">
       <h5 class="card-title"></h5>
       <p class="card-text">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Prescription Name: {{name}}</li>
         <li class="list-group-item">Recommended Dose: {{dose}}</li>
         <li class="list-group-item">Dosage Frequency: {{frequency}}</li>
         <li class="list-group-item">Prescribed by: {{doctor.name}}</li>
