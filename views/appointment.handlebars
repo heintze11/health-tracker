@@ -1,15 +1,28 @@
- <div>
-    <h2><strong>Appointments</strong></h2>
-    {{log appointment}}
-    {{#each appointment}}
- <ul class="list-group list-group-flush">
-  <li class="list-group-item">Appointment Date: {{date}}</li>
-  <li class="list-group-item">Appointment Time: {{time}}</li>
- </ul>
-    {{/each}}
-      <div>
-        <button type="button" class="btn btn-outline-success btn-lg appointment-create">Create</button>
-        <button type="button" class="btn btn-outline-danger btn-lg appointment-delete">Delete</button>
-    </div>
- </div>
- <script src="/js/appointment.js"></script>
+<div>
+   <h2>Appointments</h2>
+ <div class="card bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header">Appointment</div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text">
+      <ul class="list-group list-group-flush">
+         {{#each appointment}}
+         <li class="list-group-item">Appointment Date: {{date}}</li>
+         <li class="list-group-item">Appointment Time: {{time}}</li>
+      </ul>
+         {{/each}}
+   </p>
+  </div>
+</div>
+<form class="form">
+    <input type="text" name="date" placeholder="Appointment Date" />
+    <input type="text" name="time" placeholder="Appointment Time" />
+
+    <button
+      type="submit"
+      class="create btn btn-outline-success btn-sm"
+    >Create</button>
+  </form>
+</div>
+
+<script src="/js/appointment.js"></script>
