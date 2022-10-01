@@ -33,10 +33,10 @@ const delButtonHandler = (e) => {
 
   const appointmentId = JSON.parse(appointment.getAttribute("id"));
 
-  deleteLab(appointmentId);
+  deleteAppointment(appointmentId);
 };
 
-const deleteLab = async (id) => {
+const deleteAppointment = async (id) => {
   const response = await fetch(`/api/appointment/${id}`, {
     method: "DELETE",
     headers: {
@@ -55,5 +55,5 @@ document
   .addEventListener("submit", createButtonHandler);
 
   document
-  .querySelector(".btn-trash")
+  .querySelector(".appointment-card")
   .addEventListener("click", delButtonHandler);
