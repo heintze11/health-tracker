@@ -1,18 +1,18 @@
 <div>
    <h2>Appointments</h2>
  <div class="card bg-light mb-3" style="max-width: 18rem;">
-  <div class="card-header">Appointment</div>
+         {{#each appointment}}
+  <div class="card-header">Appointment <button class="btn-trash">🗑</button></div>
   <div class="card-body">
     <h5 class="card-title"></h5>
     <p class="card-text">
       <ul class="list-group list-group-flush">
-         {{#each appointment}}
          <li class="list-group-item">Appointment Date: {{date}}</li>
          <li class="list-group-item">Appointment Time: {{time}}</li>
       </ul>
-         {{/each}}
    </p>
   </div>
+         {{/each}}
 </div>
 <form class="form">
     <input type="text" name="date" placeholder="Appointment Date" />
