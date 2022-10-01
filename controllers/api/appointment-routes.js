@@ -15,7 +15,12 @@ router.get("/", (req, res) => {
   
 router.post("/", (req, res) => {
   console.log(req.body);
-  Appointment.create(req.body)
+  Appointment.create({
+    date: req.body.date,
+    time: req.body.time,
+    user_id: req.session.user_id,
+    doctor_id: req.session.doctor_id,
+  })
     .then((data) => res.json(data))
     .catch((err) => {
       console.log(err);
