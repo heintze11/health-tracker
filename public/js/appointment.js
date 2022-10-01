@@ -20,7 +20,9 @@ const createButtonHandler = async (event) => {
   event.preventDefault();
   const date = document.querySelector('input[name="date"]').value;
   const time = document.querySelector('input[name="time"]').value;
-
+  
+  console.log(date);
+  console.log(time);
   const response = await fetch("/api/appointment", {
     method: "POST",
     body: JSON.stringify({
