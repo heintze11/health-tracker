@@ -2,7 +2,7 @@
    <h2>Appointments</h2>
  <div class="card bg-light mb-3" style="max-width: 18rem;">
          {{#each appointment}}
-  <div class="card-header">Appointment <button class="btn-trash">🗑</button></div>
+  <div class="card-header">Appointment<button id={{id}} class="btn-trash">🗑</button></div>
   <div class="card-body">
     <h5 class="card-title"></h5>
     <p class="appointment-card">
@@ -17,9 +17,8 @@
 <form class="appointment-form">
     <input type="date" class="date" name="date"
        value="2018-07-22"
-       min="2018-01-01" max="2018-12-31">
-    <input type="time" id="appt" name="time"
-       min="09:00" max="18:00" required>
+       min="2018-01-01">
+    <input type="time" id="appt" name="time">
 
     <button
       type="submit"
