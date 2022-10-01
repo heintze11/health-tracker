@@ -4,7 +4,7 @@
   <div class="card-header">Appointment</div>
   <div class="card-body">
     <h5 class="card-title"></h5>
-    <p class="card-text">
+    <p class="appointment-card">
       <ul class="list-group list-group-flush">
          {{#each appointment}}
          <li class="list-group-item">Appointment Date: {{date}}</li>
@@ -14,7 +14,7 @@
    </p>
   </div>
 </div>
-<form class="form">
+<form class="appointment-form">
     <input type="text" name="date" placeholder="Appointment Date" />
     <input type="text" name="time" placeholder="Appointment Time" />
 
