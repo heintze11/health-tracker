@@ -26,6 +26,34 @@ const createButtonHandler = async (event) => {
   }
 };
 
+const delButtonHandler = (e) => {
+  e.stopPropagation();
+
+  const prescription = e.target;
+
+  const prescriptionId = JSON.parse(prescription.getAttribute("id"));
+
+  deletePres(prescriptionId);
+};
+
+const deletePres = async (id) => {
+  const response = await fetch(`/api/prescription/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (response.ok) {
+    document.location.reload("/api/prescription");
+  } else {
+    alert(response.statusText);
+  }
+};
+
 document
   .querySelector(".prescription-form")
   .addEventListener("submit", createButtonHandler);
+
+  document
+  .querySelector(".prescription-card")
+  .addEventListener("click", delButtonHandler);
