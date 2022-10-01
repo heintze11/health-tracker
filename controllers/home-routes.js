@@ -42,7 +42,6 @@ router.get('/lab', withAuth, async (req, res) => {
       });
   
       const lab = labData.map((lab) => lab.get({ plain: true }));
-      console.log(lab);
   
       res.render('labs', {
         layout: 'main',
