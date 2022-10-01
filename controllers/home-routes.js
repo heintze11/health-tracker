@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 });
 
 // login page
-router.get('/api/login', (req, res) => {
+router.get('/login', (req, res) => {
     if (req.session.logged_in) {
       res.redirect('/dashboard');
       return;
@@ -23,7 +23,6 @@ router.get('/api/login', (req, res) => {
 
 // dashboard page
 router.get('/dashboard', withAuth, async (req, res) => {
-    console.log(req.session);
     if (req.session.logged_in) {
         res.render('dashboard', req.session);
         return;
@@ -44,8 +43,8 @@ router.get('/lab', withAuth, async (req, res) => {
       const lab = labData.map((lab) => lab.get({ plain: true }));
   
       res.render('labs', {
-        layout: 'main',
         lab,
+        logged_in: req.session.logged_in
       });
     } catch (err) {
       res.redirect('/dashboard');
@@ -64,8 +63,8 @@ router.get('/appointment', withAuth, async (req, res) => {
       const appointment = appointmentData.map((appoint) => appoint.get({ plain: true }));
   
       res.render('appointment', {
-        layout: 'main',
         appointment,
+        logged_in: req.session.logged_in
       });
     } catch (err) {
       res.redirect('/dashboard');
@@ -84,8 +83,8 @@ router.get('/doctor', withAuth, async (req, res) => {
       const doctor = doctorData.map((doc) => doc.get({ plain: true }));
   
       res.render('doctor', {
-        layout: 'main',
         doctor,
+        logged_in: req.session.logged_in
       });
     } catch (err) {
       res.redirect('/dashboard');
@@ -104,15 +103,12 @@ router.get('/prescription', withAuth, async (req, res) => {
       const prescription = prescriptionData.map((pres) => pres.get({ plain: true }));
   
       res.render('prescriptions', {
-        layout: 'main',
         prescription,
+        logged_in: req.session.logged_in
       });
     } catch (err) {
       res.redirect('/dashboard');
     }
   });
-
-
-
 
 module.exports = router;

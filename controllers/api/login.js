@@ -1,12 +1,9 @@
 const router = require("express").Router();
 const { response } = require("express");
 const { User } = require("../../models");
-const withAuth = require("../../utils/auth");
 
 //login create
 router.post("/signup", async (req, res) => {
-  console.log("HEllo")
-  console.log(req.body);
   try {
   const newUser = await User.create({
     firstName: req.body.firstName,
@@ -15,10 +12,10 @@ router.post("/signup", async (req, res) => {
     password: req.body.password,
     });
     req.session.save(() => {
-      req.session.userId = newUser.id;
-      req.session.username = newUser.firstName;
+      req.session.user_id = newUser.id;
+      req.session.firstName = newUser.firstName;
       req.session.lastName = newUser.lastName;
-      req.session.loggedIn = true;
+      req.session.logged_in = true;
 
       res.json(newUser);
     });
@@ -63,7 +60,6 @@ try {
 
 //logout
 router.post('/logout', (req, res) => {
-  console.log("here")
     if (req.session.logged_in) {
       req.session.destroy(() => {
         res.status(204).end();
