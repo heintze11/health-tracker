@@ -1,3 +1,4 @@
+
 <div>
   <h2><strong>Lab Results</strong></h2>
   {{#each lab}}
@@ -21,3 +22,18 @@
 </div>
 
 <script src="/js/lab.js"></script>
+=======
+ <div>
+    <h2><strong>Lab Results</strong></h2>
+    {{#each lab}}
+ <ul class="list-group list-group-flush">
+    <li class="list-group-item">Lab Name: {{name}}</li>
+    <li class="list-group-item">Lab Content: {{content}}</li>
+ </ul>
+    {{/each}}
+      <div>
+        <button type="button" class="lab-create btn btn-outline-success btn-lg">Create</button>
+        <button type="button" class="lab-delete btn btn-outline-danger btn-lg">Delete</button>
+    </div>
+ </div>
+
