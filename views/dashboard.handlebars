@@ -1,17 +1,17 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container text-center">
     <h1 class="display-4 blue">Welcome, {{firstName}} {{lastName}}!</h1>
-    <p class="lead blue">-to your personal health-related tracking hub!</p>
+    <p id="welcome-statement" class="lead blue">to your personal health-related tracking hub!</p>
   </div>
 </div>
 
 <div class="dropdown text-center dashboard">
-  <h4 class="blue">Your Dashboard</h4>
+  <h4 id="dashboard-title" class="blue">Your Dashboard</h4>
   <div class="dropdown-menu">
-    <a class="dropdown-item p-3" href="/doctor">Doctors</a>
-    <a class="dropdown-item p-3" href="/appointment">Appointments</a>
-    <a class="dropdown-item p-3" href="/lab">Lab Results</a>
-    <a class="dropdown-item p-3" href="/prescription">Prescriptions</a>
+    <a id="menu-items" class="dropdown-item p-3" href="/doctor">Doctors</a>
+    <a id="menu-items" class="dropdown-item p-3" href="/appointment">Appointments</a>
+    <a id="menu-items" class="dropdown-item p-3" href="/lab">Lab Results</a>
+    <a id="menu-items" class="dropdown-item p-3" href="/prescription">Prescriptions</a>
   </div>
 </div>
 <script src="/js/dashboard.js"></script>

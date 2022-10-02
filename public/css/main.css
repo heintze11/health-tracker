@@ -1,12 +1,11 @@
 
-/* classes attached to <body> */
-/* TODO: make fc-event selector work when calender in shadow DOM */
+
 .fc-not-allowed,
 .fc-not-allowed .fc-event { /* override events' custom cursors */
   cursor: not-allowed;
 }
 
-/* TODO: not attached to body. attached to specific els. move */
+
 .fc-unselectable {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -60,9 +59,7 @@
     border: 1px solid #ddd;
     border: 1px solid var(--fc-border-color, #ddd);
   }
-/* for FF, which doesn't expand a 100% div within a table cell. use absolute positioning */
-/* inner-wrappers are responsible for being absolute */
-/* TODO: best place for this? */
+
 .fc-liquid-hack td,
   .fc-liquid-hack th {
     position: relative;
