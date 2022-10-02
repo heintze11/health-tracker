@@ -1,7 +1,7 @@
-<div>
   <h2>Prescriptions</h2>
-  <div class="prescription-card card bg-light mb-3" style="max-width: 18rem;">
+<div class="row">
     {{#each prescription}}
+  <div class="prescription-card card bg-light m-3 col-lg-4" style="max-width: 18rem;">
     <div class="card-header">{{name}} <button id={{id}} class="btn-trash">🗑</button></div>
     <div class="card-body">
       <h5 class="card-title"></h5>
@@ -13,8 +13,8 @@
       </ul>
       </p>
     </div>
-    {{/each}}
   </div>
+    {{/each}}
   <form class="prescription-form">
     <input type="text" name="name" placeholder="Prescription Name" />
     <input type="text" name="dose" placeholder="Recommended Dose" />
