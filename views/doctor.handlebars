@@ -2,12 +2,13 @@
 <div class="row">
     {{#each doctor}}
   <div class="doctor-card card bg-light m-3 col-lg-4" style="max-width: 20rem;">
-    <div class="card-header">{{name}} <button id={{id}} class="btn-trash">🗑</button></div>
+    <div class="card-header"><b>{{name}}</b> <button id={{id}} class="btn-trash">🗑</button></div>
     <div class="card-body">
       <h5 class="card-title"></h5>
       <p class="card-text">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Doctor Specialty: {{specialty}}</li>
+        <li class="list-group-item"><b>Doctor Specialty:</b> {{specialty}}</li>
+        <li class="list-group-item"><b>Office Address:</b> {{address}}</li>
       </ul>
       </p>
     </div>
@@ -16,6 +17,7 @@
   <form class="doctor-form">
     <input type="text" name="name" placeholder="Doctor Name" />
     <input type="text" name="specialty" placeholder="Doctor Specialty" />
+    <input type="text" name="address" placeholder="Office Address" />
 
     <button type="submit" class="create btn btn-outline-success btn-sm">Add</button>
   </form>
