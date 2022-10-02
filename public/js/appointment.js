@@ -5,7 +5,7 @@ const createButtonHandler = async (event) => {
   const date = document.querySelector('input[name="date"]').value;
   const time = document.querySelector('input[name="time"]').value;
   const doctor_id = document.querySelector('select[name="doctor"]').value;
-  
+
   console.log(date);
   console.log(time);
   const response = await fetch("/api/appointment", {
@@ -54,6 +54,36 @@ document
   .querySelector(".appointment-form")
   .addEventListener("submit", createButtonHandler);
 
-  document
+document
   .querySelector(".appointment-card")
   .addEventListener("click", delButtonHandler);
+
+
+const eventsData = [];
+const getData = fetch("/api/appointment/calendar")
+.then(function(res){
+  return res.json();
+}) .then(function(data){
+  for (let i = 0; i < data.appointment.length; i++) {
+    const start = data.appointment[i].date;
+    const time = data.appointment[i].time;
+    const title = data.appointment[i].doctor.name;
+    newObj = {
+      start,
+      time,
+      title
+    }
+    eventsData.push(newObj);
+  }
+  
+  calendar(eventsData);
+})
+
+function calendar(data) {
+  var calendarEl = document.getElementById('calendar');
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    events: data
+  });
+  calendar.render();
+};

@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { response } = require("express");
-const { Appointment } = require("../../models");
+const { Appointment, Doctor } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 //NEED TO ADD withAuth
@@ -12,7 +12,31 @@ router.get("/", (req, res) => {
       res.status(500).json(err);
     });
   });
-  
+
+  router.get("/calendar", async (req, res) => {
+    try {
+      const appointmentData = await Appointment.findAll({
+        where: {
+          user_id: req.session.user_id,
+        },
+        include: [
+          Doctor
+        ]
+      });
+      console.log("here")
+      const doctorData = await Doctor.findAll();
+      const doctor = doctorData.map((doc) => doc.get({ plain: true }));
+      const appointment = appointmentData.map((appoint) => appoint.get({ plain: true }));
+      res.json( {
+        appointment,
+        doctor
+      });
+    } catch (err) {
+      res.redirect('/dashboard');
+    }
+  });
+ 
+
 router.post("/", (req, res) => {
   console.log(req.body);
   Appointment.create({
