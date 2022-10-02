@@ -1,7 +1,7 @@
-<div>
   <h2>Appointments</h2>
-  <div class="card bg-light mb-3" style="max-width: 18rem;">
+<div class="row">
     {{#each appointment}}
+  <div class="card bg-light m-3 col-lg-4" style="max-width: 20rem;">
     <div class="card-header">{{doctor.name}}<button id={{id}} class="btn-trash">🗑</button></div>
     <div class="card-body">
       <h5 class="card-title"></h5>
@@ -12,10 +12,10 @@
       </ul>
       </p>
     </div>
-    {{/each}}
   </div>
-
-  {{!-- <div id='calendar'></div> --}}
+    {{/each}}
+    
+  <br>
 
   <form class="appointment-form">
     <input type="date" class="date" name="date" value="2018-07-22" min="2018-01-01">
@@ -27,6 +27,27 @@
     </select>
     <button type="submit" class="create btn btn-outline-success btn-sm">Create</button>
   </form>
+  <br>
+
+  <script>
+  
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        eventContent: {}
+      });
+      calendar.render();
+    });
+
+  </script>
+
+  <div id='calendar'></div>
+
+
+  <br><br>
+
+
 </div>
 
 <script src="/js/appointment.js"></script>
