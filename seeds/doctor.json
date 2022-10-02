@@ -2,16 +2,19 @@
     {
         "name": "Dr. Varga",
         "specialty": "Psychiatrist",
+        "address": "300 W 10th Ave, Albuqerque, NM",
         "user_id": "c-dG0JofjP"
     },
     {
         "name": "Dr. Salamanca",
         "specialty": "PCP",
+        "address": "5034 S Broadway, Albuquerque, NM",
         "user_id": "MHBz11_o0S"
     },
     {
         "name": "Dr. Fring",
         "specialty": "PCP",
+        "address": "12 N Madison St, Albuquerque, NM",
         "user_id": "4oMQdZPpq-"
     }
 ]

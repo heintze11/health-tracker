@@ -26,3 +26,15 @@
     cursor: pointer;
 }  
 
+.btn-trash {
+    float: right;
+    margin-top: -2px;
+}
+
+.doctor-card {
+    padding: 0;
+}
+
+.list-group {
+    list-style: none;
+}

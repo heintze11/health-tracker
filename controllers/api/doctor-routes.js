@@ -17,6 +17,7 @@ router.post("/", (req, res) => {
   Doctor.create({
     name: req.body.name,
     specialty: req.body.specialty,
+    address: req.body.address,
     user_id: req.session.user_id,
     doctor_id: req.session.doctor_id,
   })
@@ -32,6 +33,7 @@ router.put("/:id", (req, res) => {
       {
         name: req.body.name,
         specialty: req.body.specialty,
+        address: req.body.address,
       },
       {
         where: {
