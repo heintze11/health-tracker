@@ -14,7 +14,7 @@
     </div>
   </div>
     {{/each}}
-    
+
   <br>
 
   <form class="appointment-form">
@@ -29,25 +29,8 @@
   </form>
   <br>
 
-  <script>
-  
-    document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar');
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        eventContent: {}
-      });
-      calendar.render();
-    });
-
-  </script>
-
-  <div id='calendar'></div>
-
-
-  <br><br>
-
-
 </div>
 
+  <div id='calendar'></div>
+  
 <script src="/js/appointment.js"></script>
