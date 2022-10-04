@@ -3,8 +3,7 @@ const { response } = require("express");
 const { Doctor } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-//NEED TO ADD withAuth
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Doctor.findAll()
     .then((data) => res.json(data))
     .catch((err) => {
@@ -13,7 +12,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Doctor.create({
     name: req.body.name,
     specialty: req.body.specialty,
@@ -28,7 +27,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
     Doctor.update(
       {
         name: req.body.name,
@@ -54,7 +53,7 @@ router.put("/:id", (req, res) => {
       });
   });
 
-  router.delete("/:id", (req, res) => {
+  router.delete("/:id", withAuth, (req, res) => {
     Doctor.destroy({
       where: {
         id: req.params.id,

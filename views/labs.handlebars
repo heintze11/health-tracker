@@ -1,28 +1,50 @@
-  <h2>Lab Results</h2>
+<h2>Lab Results</h2>
 <div class="row">
-    {{#each lab}}
-  <div class="lab-card card bg-light m-3 col-lg-4" style="max-width: 18rem;">
-    <div class="card-header">{{name}} <button type="click" id={{id}} class="btn-trash">🗑</button></div>
-    <div class="card-body">
-      <h5 class="card-title"></h5>
-      <p class="card-text">
-      <ul class="list-group list-group-flush">
-        <li id="card-info" class="list-group-item">Lab Result: {{content}}</li>
-        <li id="card-info" class="list-group-item">Run by:{{doctor.name}}</li>
-      </ul>
-      </p>
+  {{#each lab}}
+    <div class="lab-card card bg-light m-3 col-lg-4" style="max-width: 18rem;">
+      <div class="card-header">{{name}}
+        <button type="click" id={{id}} class="btn-trash">🗑</button></div>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">
+          <ul class="list-group list-group-flush">
+            <li id="card-info" class="list-group-item"><b>Lab Result:</b>
+              <span style="color:rgb(71, 75, 215)"> {{content}}</span></li>
+            <li id="card-info" class="list-group-item"><b>Run by:</b>
+              <span style="color:rgb(71, 75, 215)"> {{doctor.name}}</span></li>
+          </ul>
+        </p>
+      </div>
     </div>
-  </div>
-    {{/each}}
+  {{/each}}
   <form class="lab-form">
     <input type="text" name="name" placeholder="Lab Name" />
     <input type="text" name="content" placeholder="Lab Content" />
-    <select class="form-control" id="doctor-dropdown" name="doctor" placeholder="Doctor">
+    <select
+      class="form-control"
+      id="doctor-dropdown"
+      name="range"
+      placeholder="Value Range"
+    >
+      <option value="Above normal">Above normal</option>
+      <option value="Normal">Normal</option>
+      <option value="Below normal">Below normal</option>
+    </select>
+    <select
+      class="form-control"
+      id="doctor-dropdown"
+      name="doctor"
+      placeholder="Doctor"
+    >
       {{#each doctor}}
-      <option value={{id}}>{{name}}</option>
+        <option value={{id}}>{{name}}</option>
       {{/each}}
     </select>
-    <button type="submit" id="create-btn" class="create btn btn-outline-success btn-sm">Create</button>
+    <button
+      type="submit"
+      id="create-btn"
+      class="create btn btn-outline-success btn-sm"
+    >Create</button>
   </form>
 </div>
 
