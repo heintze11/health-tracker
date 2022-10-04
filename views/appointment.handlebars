@@ -18,8 +18,8 @@
   <br>
 
   <form class="appointment-form">
-    <input type="date" class="date" name="date" value="2018-07-22" min="2018-01-01">
-    <input type="time" id="appt" name="time">
+    <input type="date" class="date" name="date" min="2020-01-01">
+    <input type="time" id="appt" name="time" value="08:00">
     <select class="form-control" id="doctor-dropdown" name="doctor" placeholder="Doctor">
       {{#each doctor}}
       <option value={{id}}>{{name}}</option>
@@ -32,5 +32,7 @@
 </div>
 
   <div id='calendar'></div>
+
+  
   
 <script src="/js/appointment.js"></script>

@@ -1490,3 +1490,9 @@ A VERTICAL event
   background-color: var(--bs-gray-200);
 }
 
+#calendar .fc-view {
+  background-color: rgb(128, 212, 240);
+}
+#calendar  {
+  --fc-page-bg-color: #EEEEEE;
+}
