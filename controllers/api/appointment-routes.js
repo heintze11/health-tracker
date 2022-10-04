@@ -3,8 +3,7 @@ const { response } = require("express");
 const { Appointment, Doctor } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-//NEED TO ADD withAuth
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Appointment.findAll()
   .then((data) => res.json(data))
     .catch((err) => {
@@ -13,7 +12,7 @@ router.get("/", (req, res) => {
     });
   });
 
-  router.get("/calendar", async (req, res) => {
+  router.get("/calendar", withAuth, async (req, res) => {
     try {
       const appointmentData = await Appointment.findAll({
         where: {
@@ -37,7 +36,7 @@ router.get("/", (req, res) => {
   });
  
 
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   console.log(req.body);
   Appointment.create({
     date: req.body.date,
@@ -71,7 +70,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Appointment.destroy({
     where: {
       id: req.params.id,

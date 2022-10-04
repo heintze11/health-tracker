@@ -7,9 +7,9 @@
       <h5 class="card-title"></h5>
       <p class="card-text">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Recommended Dose: {{dose}}</li>
-        <li class="list-group-item">Dosage Frequency: {{frequency}}</li>
-        <li class="list-group-item">Prescribed by: {{doctor.name}}</li>
+        <li class="list-group-item"><b>Recommended Dose:</b> <span style="color:rgb(71, 75, 215)"> {{dose}}</span></li>
+        <li class="list-group-item"><b>Dosage Frequency:</b> <span style="color:rgb(71, 75, 215)"> {{frequency}}</span></li>
+        <li class="list-group-item"><b>Prescribed by:</b> <span style="color:rgb(71, 75, 215)"> {{doctor.name}}</span></li>
       </ul>
       </p>
     </div>
@@ -19,7 +19,7 @@
     <input type="text" name="name" placeholder="Prescription Name" />
     <input type="text" name="dose" placeholder="Recommended Dose" />
     <input type="text" name="frequency" placeholder="Dosage Frequency" />
-    <select class="form-control" name="doctor" placeholder="Doctor">
+    <select class="form-control" id="doctor-dropdown" name="doctor" placeholder="Doctor">
       {{#each doctor}}
       <option value={{id}}>{{name}}</option>
       {{/each}}

@@ -4,7 +4,7 @@ const { Lab } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 //NEED TO ADD withAuth
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
     Lab.findAll()
       .then((data) => res.json(data))
       .catch((err) => {
@@ -13,10 +13,11 @@ router.get("/", (req, res) => {
       });
   });
 
-  router.post("/", (req, res) => {
+  router.post("/", withAuth, (req, res) => {
     Lab.create({
       name: req.body.name,
       content: req.body.content,
+      range: req.body.range,
       user_id: req.session.user_id,
       doctor_id: req.body.doctor_id,
     })
@@ -27,11 +28,12 @@ router.get("/", (req, res) => {
       });
   });
 
-  router.put("/:id", (req, res) => {
+  router.put("/:id", withAuth, (req, res) => {
     Lab.update(
       {
         name: req.body.name,
         content: req.body.content,
+        range: req.body.range,
       },
       {
         where: {
@@ -52,7 +54,7 @@ router.get("/", (req, res) => {
       });
   });
 
-  router.delete("/:id", (req, res) => {
+  router.delete("/:id", withAuth, (req, res) => {
     Lab.destroy({
       where: {
         id: req.params.id,
