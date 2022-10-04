@@ -19,6 +19,10 @@ Lab.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
+        range: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         user_id: {
             type: DataTypes.STRING,
             references: {

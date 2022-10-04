@@ -48,6 +48,11 @@ form {
 input,
 #doctor-dropdown {
   height: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#doctor-dropdown {
+    width: 150px;
 }
 
 #create-btn {
@@ -95,10 +100,16 @@ input,
 
 #card-info {
   font-size: 16px;
-  padding: 8px;
-  color: #1a1a1a;
+  padding: 4px;
+  /* font-family: 'Montserrat', sans-serif; */
 }
 
 .list-group {
   list-style: none;
+}
+
+#login-click {
+    color: aliceblue;
+    font-weight: 600;
+    font-size: 20px;
 }

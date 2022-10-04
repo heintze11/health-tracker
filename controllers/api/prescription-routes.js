@@ -3,8 +3,7 @@ const { response } = require("express");
 const { Prescription } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-//NEED TO ADD withAuth
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Prescription.findAll()
     .then((data) => res.json(data))
     .catch((err) => {
@@ -13,7 +12,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Prescription.create({
     name: req.body.name,
     dose: req.body.dose,
@@ -28,7 +27,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
     Prescription.update(
       {
         name: req.body.name,
@@ -55,7 +54,7 @@ router.put("/:id", (req, res) => {
   });
 
 
-  router.delete("/:id", (req, res) => {
+  router.delete("/:id", withAuth, (req, res) => {
     Prescription.destroy({
       where: {
         id: req.params.id,
