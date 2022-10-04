@@ -28,12 +28,12 @@ const createButtonHandler = async (event) => {
 
 const delButtonHandler = (e) => {
   e.stopPropagation();
-
   const prescription = e.target;
 
   const prescriptionId = JSON.parse(prescription.getAttribute("id"));
-
+  if (e.target.className === "btn-trash") {
   deletePres(prescriptionId);
+  }
 };
 
 const deletePres = async (id) => {
@@ -55,5 +55,5 @@ document
   .addEventListener("submit", createButtonHandler);
 
   document
-  .querySelector(".prescription-card")
+  .querySelector(".row")
   .addEventListener("click", delButtonHandler);

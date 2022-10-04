@@ -29,12 +29,12 @@ const createButtonHandler = async (event) => {
 // Delete lab
 const handleLabDelete = (e) => {
   e.stopPropagation();
-
   const lab = e.target;
 
   const labId = JSON.parse(lab.getAttribute("id"));
-
+  if (e.target.className === "btn-trash") {
   deleteLab(labId);
+  }
 };
 
 const deleteLab = async (id) => {
@@ -55,4 +55,4 @@ document
   .querySelector(".lab-form")
   .addEventListener("submit", createButtonHandler);
 
-document.querySelector(".lab-card").addEventListener("click", handleLabDelete);
+document.querySelector(".row").addEventListener("click", handleLabDelete);
