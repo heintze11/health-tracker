@@ -28,12 +28,12 @@ const createButtonHandler = async (event) => {
 // Delete doctor
 const handleDoctorDelete = (e) => {
   e.stopPropagation();
-
   const doctor = e.target;
 
   const doctorId = JSON.parse(doctor.getAttribute("id"));
-
-  deleteDoctor(doctorId);
+  if (e.target.className === "btn-trash") {
+    deleteDoctor(doctorId);
+  }
 };
 
 const deleteDoctor = async (id) => {
@@ -55,5 +55,5 @@ document
   .addEventListener("submit", createButtonHandler);
 
 document
-  .querySelector(".doctor-card")
+  .querySelector(".row")
   .addEventListener("click", handleDoctorDelete);

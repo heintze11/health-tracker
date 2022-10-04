@@ -28,12 +28,12 @@ const createButtonHandler = async (event) => {
 
 const delButtonHandler = (e) => {
   e.stopPropagation();
-
   const appointment = e.target;
 
   const appointmentId = JSON.parse(appointment.getAttribute("id"));
-
-  deleteAppointment(appointmentId);
+  if (e.target.className === "btn-trash") {
+    deleteAppointment(appointmentId);
+  }
 };
 
 const deleteAppointment = async (id) => {
@@ -55,7 +55,7 @@ document
   .addEventListener("submit", createButtonHandler);
 
 document
-  .querySelector(".appointment-card")
+  .querySelector(".row")
   .addEventListener("click", delButtonHandler);
 
 
