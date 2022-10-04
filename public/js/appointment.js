@@ -83,6 +83,8 @@ function calendar(data) {
   var calendarEl = document.getElementById('calendar');
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
+    eventColor: '#00008B',
+    color: '#00008B',
     events: data
   });
   calendar.render();
