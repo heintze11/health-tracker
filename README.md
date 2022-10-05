@@ -31,16 +31,22 @@ AS a person that values my health, I WANT to keep a record of my healthcare info
 * Express
 * Express-session
 * MySQL
-* Sequalize
+* Sequelize
 * Handlebars
+* Bcrypt
+* Nanoid
+* FullCalendar
 * Javascript
 * CSS
 
 
 ## Mock Up
 
- ![Mock-up](./Assets/images/)
+ ![Mock-up main page](./Assets/images/screenshot-main.jpg)
+ ![Mock-up appointment page](./Assets/images/screenshot-app.jpg)
 
+## Heroku Deployed link
+https://evening-reef-97935.herokuapp.com/
 
  ## Developers
  Alviva Faidley, Levi Heintzelman, and Tori Haling
