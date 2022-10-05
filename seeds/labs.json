@@ -4,20 +4,39 @@
         "content": "normal",
         "range": "Normal",
         "user_id": "c-dG0JofjP",
-        "doctor_id": 3
+        "doctor_id": 3,
+        "date": "2022-04-10"
     },
     {
         "name": "Cholesterol",
-        "content": "High",
+        "content": "278",
         "range": "Above normal",
         "user_id": "MHBz11_o0S",
-        "doctor_id": 2
+        "doctor_id": 2,
+        "date": "2022-06-10"
     },
     {
         "name": "Urinalysis",
         "content": "clear, light yellow",
         "range": "Below normal",
         "user_id": "c-dG0JofjP",
-        "doctor_id": 1
+        "doctor_id": 1,
+        "date": "2022-08-10"
+    },
+    {
+        "name": "Complete Blood Count",
+        "content": "Red Blood Cells: 5 million",
+        "range": "Normal",
+        "user_id": "MHBz11_o0S",
+        "doctor_id": 2,
+        "date": "2022-06-10"
+    },
+    {
+        "name": "Complete Blood Count",
+        "content": "White Blood Cells: 10,000",
+        "range": "Normal",
+        "user_id": "MHBz11_o0S",
+        "doctor_id": 2,
+        "date": "2022-06-10"
     }
 ]

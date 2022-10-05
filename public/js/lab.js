@@ -8,6 +8,7 @@ const createButtonHandler = async (event) => {
   const content = document.querySelector('input[name="content"]').value;
   const range = document.querySelector('select[name="range"]').value;
   const doctor_id = document.querySelector('select[name="doctor"]').value;
+  const date = document.querySelector('input[name="date"]').value;
 
   const response = await fetch("/api/lab", {
     method: "POST",
@@ -16,6 +17,7 @@ const createButtonHandler = async (event) => {
       content,
       range,
       doctor_id,
+      date,
     }),
     headers: {
       "Content-Type": "application/json",

@@ -37,6 +37,10 @@ Lab.init(
                 key: 'id',
             },
         },
+        date: {
+            type: DataTypes.DATEONLY,
+            allowNull: false,
+        },
 
     },
     {
