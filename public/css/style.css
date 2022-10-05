@@ -3,90 +3,52 @@ body {
     rgb(85, 89, 219),
     rgb(23, 170, 233),
     rgb(125, 187, 225)
-    );
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  }
-
-form {
-  margin-left: 17px;
-  margin-bottom: 50px;
-  }
-  
-input,
-#doctor-dropdown {
-  height: 30px;
-  font-family: 'Montserrat', sans-serif;
-  }
-
-.list-group {
-  list-style: none;
-  }
-  
-.dashboard-image {
-  width:  200px;
-  height: 200px;
-  object-fit: cover;
-  }
-
-.page-container {
-  position: relative;
-  min-height: 100vh;
-  }
-
-.btn,
-.btn-trash {
-    cursor: pointer;
-    }
-  
-.btn-trash {
-    float: right;
-    margin-top: -2px;
-    }
-  
-.doctor-card {
-    padding: 0;
-    }
-  
-.card {
-    padding: 0;
-    }
-
-.dashboard {
-    position: relative;
-    top: 50px;
-    }
-    
-.blue {
-    color: rgba(1, 1, 97, 0.822);
-    }
+  );
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
 #health-tracker {
   color: aliceblue;
-  }
+}
 
 #menu-items {
   color: aliceblue;
   font-size: 23px;
   display: inline-block;
-  }
+}
 
 #dashboard-title {
   margin: 30px;
-  }
+}
 
 #my-dashboard,
 #logout {
   background-color: navy;
   color: aliceblue;
   font-weight: 600;
-  }
+}
 
 #welcome-statement {
   font-weight: 600;
 }
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
 #content-wrap {
   padding-bottom: 2.5rem;
+}
+
+form {
+  margin-left: 17px;
+  margin-bottom: 50px;
+}
+
+input,
+#doctor-dropdown {
+  height: 30px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #doctor-dropdown {
@@ -101,19 +63,55 @@ input,
   margin-left: 10px;
 }
 
+.dashboard {
+  position: relative;
+  top: 50px;
+}
+.blue {
+  color: rgba(1, 1, 97, 0.822);
+}
+
 #footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
-  height: 40px;
+  height: 60px;
   font-weight: 600;
   color: rgba(1, 1, 97, 0.822);
+}
+
+.btn,
+.btn-trash {
+  cursor: pointer;
+}
+
+.btn-trash {
+  float: right;
+  margin-top: -2px;
+}
+
+.doctor-card {
+  padding: 0;
+}
+
+.card {
+  padding: 0;
 }
 
 #card-info {
   font-size: 16px;
   padding: 4px;
   /* font-family: 'Montserrat', sans-serif; */
+}
+
+.list-group {
+  list-style: none;
+}
+
+.dashboard-image {
+  width:  200px;
+  height: 200px;
+  object-fit: cover;
 }
 
 #login-click {
