@@ -16,5 +16,17 @@
         "specialty": "PCP",
         "address": "12 N Madison St, Albuquerque, NM",
         "user_id": "4oMQdZPpq-"
+    },
+    {
+        "name": "Dr. Eladio",
+        "specialty": "Dentist",
+        "address": "1456 W Main St, Albuquerque, NM",
+        "user_id": "MHBz11_o0S"
+    },
+    {
+        "name": "Dr. Ziegler",
+        "specialty": "Podiatrist",
+        "address": "9456 E 45th St, Albuquerque, NM",
+        "user_id": "MHBz11_o0S"
     }
 ]

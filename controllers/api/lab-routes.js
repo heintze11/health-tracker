@@ -20,6 +20,7 @@ router.get("/", withAuth, (req, res) => {
       range: req.body.range,
       user_id: req.session.user_id,
       doctor_id: req.body.doctor_id,
+      date: req.body.date,
     })
       .then((data) => res.json(data))
       .catch((err) => {
@@ -34,6 +35,7 @@ router.get("/", withAuth, (req, res) => {
         name: req.body.name,
         content: req.body.content,
         range: req.body.range,
+        date: req.body.date,
       },
       {
         where: {
