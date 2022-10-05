@@ -19,5 +19,19 @@
         "frequency": "Daily",
         "user_id":"4oMQdZPpq-",
         "doctor_id": 1
+    },
+    {
+        "name": "Hydrocodone",
+        "dose": "2 capsules",
+        "frequency": "Every 4 hours",
+        "user_id": "MHBz11_o0S",
+        "doctor_id": 4
+    },
+    {
+        "name": "Clotrimazole",
+        "dose": "Apply cream to infected area",
+        "frequency": "2-3 times daily",
+        "user_id": "MHBz11_o0S",
+        "doctor_id": 5
     }
 ]

@@ -8,10 +8,14 @@
         <h5 class="card-title"></h5>
         <p class="card-text">
           <ul class="list-group list-group-flush">
-            <li id="card-info" class="list-group-item"><b>Lab Result:</b>
+            <li id="card-info" class="list-group-item"><b>Lab Value:</b>
               <span style="color:rgb(71, 75, 215)"> {{content}}</span></li>
+            <li id="card-info" class="list-group-item"><b>Range:</b>
+              <span style="color:rgb(71, 75, 215)"> {{range}}</span></li>
             <li id="card-info" class="list-group-item"><b>Run by:</b>
               <span style="color:rgb(71, 75, 215)"> {{doctor.name}}</span></li>
+            <li id="card-info" class="list-group-item"><b>Date:</b>
+              <span style="color:rgb(71, 75, 215)"> {{date}}</span></li>
           </ul>
         </p>
       </div>
@@ -30,6 +34,7 @@
       <option value="Normal">Normal</option>
       <option value="Below normal">Below normal</option>
     </select>
+    <input type="date" class="date" name="date" min="2020-01-01">
     <select
       class="form-control"
       id="doctor-dropdown"

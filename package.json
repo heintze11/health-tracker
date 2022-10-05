@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "develop": "npm run seed&&npm start",
-    "seed": "node ./seeds/seed.js"
+    "develop": "npm run seed&&npm run watch",
+    "seed": "node ./seeds/seed.js",
+    "watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,6 @@
     "fullcalendar": "^5.11.3",
     "mysql2": "^2.3.3",
     "nanoid": "^3.3.4",
-    "nodemon": "^2.0.20",
     "sequelize": "^6.23.1"
   }
 }
