@@ -48,5 +48,13 @@ AS a person that values my health, I WANT to keep a record of my healthcare info
 ## Heroku Deployed link
 https://evening-reef-97935.herokuapp.com/
 
+## Future Developments
+- Notification system for scheduling appointments at the recommended times
+- Uploading feature for PDF files (vaccination and lab results) 
+- Map and directions to doctor’s offices
+- Separate doctor login for doctor use
+- Additional security due to the content of our application
+
+
  ## Developers
  Alviva Faidley, Levi Heintzelman, and Tori Haling
